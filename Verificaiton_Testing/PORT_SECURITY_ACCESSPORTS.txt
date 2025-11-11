@@ -1,0 +1,14 @@
+interface FastEthernet0/1
+ switchport access vlan 10
+ ip dhcp snooping limit rate 15
+ no lldp transmit
+ switchport mode access
+ switchport nonegotiate
+ switchport voice vlan 20
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0001.4290.A4D1
+ spanning-tree portfast
+ spanning-tree bpduguard enable

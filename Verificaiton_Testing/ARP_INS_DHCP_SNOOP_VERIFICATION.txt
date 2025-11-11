@@ -1,0 +1,127 @@
+ASW-A1#show ip arp inspection
+
+Source Mac Validation      : Enabled
+Destination Mac Validation : Enabled
+IP Address Validation      : Enabled
+
+ Vlan     Configuration    Operation   ACL Match          Static ACL
+ ----     -------------    ---------   ---------          ----------
+   10     Enabled          Active
+   20     Enabled          Active
+   40     Enabled          Active
+   99     Enabled          Active
+
+ Vlan     ACL Logging      DHCP Logging      Probe Logging
+ ----     -----------      ------------      -------------
+   10     Deny             Deny              Off
+   20     Deny             Deny              Off
+   40     Deny             Deny              Off
+   99     Deny             Deny              Off
+
+ Vlan      Forwarded        Dropped     DHCP Drops      ACL Drops
+ ----      ---------        -------     ----------      ---------
+   10              0              0              0              0
+
+ASW-A1#show ip dhcp snoop
+ASW-A1#show ip dhcp snooping ?
+  binding   DHCP snooping bindings
+  database  DHCP snooping database agent
+  <cr>
+ASW-A1#show ip dhcp snooping bind
+ASW-A1#show ip dhcp snooping binding ?
+  <cr>
+ASW-A1#show ip dhcp snooping binding 
+MacAddress          IpAddress        Lease(sec)  Type           VLAN  Interface
+------------------  ---------------  ----------  -------------  ----  -----------------
+00:02:4A:E7:16:01   10.0.0.12        0           dhcp-snooping  99    FastEthernet0/1
+Total number of bindings: 1
+ASW-A1#
+ASW-A1#show ip dhcp snooping 
+Switch DHCP snooping is enabled
+DHCP snooping is configured on following VLANs:
+10,20,40,99
+Insertion of option 82 is disabled
+Option 82 on untrusted port is not allowed
+Verification of hwaddr field is enabled
+Interface                  Trusted    Rate limit (pps)
+-----------------------    -------    ----------------
+FastEthernet0/1            no         15              
+FastEthernet0/4            no         unlimited       
+FastEthernet0/3            no         unlimited       
+FastEthernet0/8            no         unlimited       
+FastEthernet0/6            no         unlimited       
+FastEthernet0/2            no         100             
+FastEthernet0/7            no         unlimited       
+FastEthernet0/5            no         unlimited       
+FastEthernet0/13           no         unlimited       
+FastEthernet0/12           no         unlimited       
+FastEthernet0/9            no         unlimited       
+FastEthernet0/10           no         unlimited       
+FastEthernet0/11           no         unlimited       
+FastEthernet0/14           no         unlimited       
+FastEthernet0/15           no         unlimited       
+FastEthernet0/17           no         unlimited       
+FastEthernet0/19           no         unlimited       
+FastEthernet0/16           no         unlimited       
+FastEthernet0/21           no         unlimited       
+FastEthernet0/18           no         unlimited       
+FastEthernet0/22           no         unlimited       
+GigabitEthernet0/1         yes        unlimited       
+FastEthernet0/20           no         unlimited       
+FastEthernet0/24           no         unlimited       
+FastEthernet0/23           no         unlimited       
+GigabitEthernet0/2         yes        unlimited       
+ASW-A1#show ip dhcp
+ASW-A1#show ip dhcp snoop
+ASW-A1#show ip dhcp snooping ?
+  binding   DHCP snooping bindings
+  database  DHCP snooping database agent
+  <cr>
+ASW-A1#show ip dhcp snooping bind
+ASW-A1#show ip dhcp snooping binding 
+MacAddress          IpAddress        Lease(sec)  Type           VLAN  Interface
+------------------  ---------------  ----------  -------------  ----  -----------------
+00:02:4A:E7:16:01   10.0.0.12        0           dhcp-snooping  99    FastEthernet0/1
+Total number of bindings: 1
+ASW-A1#show ip arp ins
+ASW-A1#show ip arp inspection 
+
+Source Mac Validation      : Enabled
+Destination Mac Validation : Enabled
+IP Address Validation      : Enabled
+
+ Vlan     Configuration    Operation   ACL Match          Static ACL
+ ----     -------------    ---------   ---------          ----------
+   10     Enabled          Active
+   20     Enabled          Active
+   40     Enabled          Active
+   99     Enabled          Active
+
+ Vlan     ACL Logging      DHCP Logging      Probe Logging
+ ----     -----------      ------------      -------------
+   10     Deny             Deny              Off
+   20     Deny             Deny              Off
+   40     Deny             Deny              Off
+   99     Deny             Deny              Off
+
+ Vlan      Forwarded        Dropped     DHCP Drops      ACL Drops
+ ----      ---------        -------     ----------      ---------
+   10              0              0              0              0
+   20              0              0              0              0
+   40              0              0              0              0
+   99              5              0              0              0
+
+ Vlan   DHCP Permits    ACL Permits  Probe Permits   Source MAC Failures
+ ----   ------------    -----------  -------------   -------------------
+   10              0              0              0                     0
+   20              0              0              0                     0
+   40              0              0              0                     0
+   99              5              0              0                     0
+
+ Vlan   Dest MAC Failures   IP Validation Failures   Invalid Protocol Data
+ ----   -----------------   ----------------------   ---------------------
+   10                   0                        0                       0
+   20                   0                        0                       0
+   40                   0                        0                       0
+   99                   0                        0                       0
+ASW-A1# 

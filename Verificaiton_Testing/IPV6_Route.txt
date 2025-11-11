@@ -1,0 +1,29 @@
+R1#show ipv6 route
+IPv6 Routing Table - 10 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route, M - MIPv6
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       ND - ND Default, NDp - ND Prefix, DCE - Destination, NDr - Redirect
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       D - EIGRP, EX - EIGRP external
+S   ::/0 [1/0]
+     via 2001:DB8:A::1
+C   2001:DB8:A::/64 [0/0]
+     via GigabitEthernet0/0/0, directly connected
+L   2001:DB8:A::2/128 [0/0]
+     via GigabitEthernet0/0/0, receive
+C   2001:DB8:B::/64 [0/0]
+     via GigabitEthernet0/1/0, directly connected
+L   2001:DB8:B::2/128 [0/0]
+     via GigabitEthernet0/1/0, receive
+C   2001:DB8:A1::/64 [0/0]
+     via GigabitEthernet0/0, directly connected
+L   2001:DB8:A1:0:20C:CFFF:FE08:5001/128 [0/0]
+     via GigabitEthernet0/0, receive
+C   2001:DB8:A2::/64 [0/0]
+     via GigabitEthernet0/1, directly connected
+L   2001:DB8:A2:0:20C:CFFF:FE08:5002/128 [0/0]
+     via GigabitEthernet0/1, receive
+L   FF00::/8 [0/0]
+     via Null0, receive

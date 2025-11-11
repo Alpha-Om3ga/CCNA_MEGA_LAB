@@ -1,0 +1,46 @@
+ip dhcp excluded-address 10.0.0.1 10.0.0.10
+ip dhcp excluded-address 10.1.0.1 10.1.0.10
+ip dhcp excluded-address 10.2.0.1 10.2.0.10
+ip dhcp excluded-address 10.0.0.16 10.0.0.25
+ip dhcp excluded-address 10.3.0.1 10.3.0.10
+ip dhcp excluded-address 10.4.0.1 10.4.0.10
+ip dhcp excluded-address 10.6.0.1 10.6.0.10
+ip dhcp excluded-address 10.0.0.17 10.0.0.26
+!
+ip dhcp pool A-Mgmt
+ network 10.0.0.0 255.255.255.240
+ default-router 10.0.0.1
+ option 43 ip 10.0.0.7
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool A-PC
+ network 10.1.0.0 255.255.255.0
+ default-router 10.1.0.1
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool A-Phone
+ network 10.2.0.0 255.255.255.0
+ default-router 10.2.0.1
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool B-Mgmt
+ network 10.0.0.16 255.255.255.240
+ default-router 10.0.0.17
+ option 43 ip 10.0.0.7
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool B-PC
+ network 10.3.0.0 255.255.255.0
+ default-router 10.3.0.1
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool B-Phone
+ network 10.4.0.0 255.255.255.0
+ default-router 10.4.0.1
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
+ip dhcp pool Wi-Fi
+ network 10.6.0.0 255.255.255.0
+ default-router 10.6.0.1
+ dns-server 10.5.0.4
+ domain-name jeremysitlab.com
